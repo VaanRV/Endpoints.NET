@@ -1,0 +1,212 @@
+{
+	"info": {
+		"_postman_id": "13b4263f-5f71-4d6c-baee-143026a9ef9b",
+		"name": "API TEST",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "12460545"
+	},
+	"item": [
+		{
+			"name": "USERS",
+			"item": [
+				{
+					"name": "POST",
+					"item": [
+						{
+							"name": "201",
+							"item": [
+								{
+									"name": "POST USERS SUCESS",
+									"protocolProfileBehavior": {
+										"disabledSystemHeaders": {
+											"content-type": true
+										}
+									},
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"id\": 1,\r\n    \"name\": \"string\",\r\n    \"lastName\": \"string\",\r\n    \"email\": \"haumel@gmail.com\",\r\n    \"phoneNumber\": 0,\r\n    \"password\": \"string\",\r\n    \"createDate\": \"2023-06-08T19:27:57.621Z\",\r\n    \"updateDate\": \"2023-06-08T19:27:57.621Z\"\r\n}"
+										},
+										"url": {
+											"raw": "https://localhost:7179/Users",
+											"protocol": "https",
+											"host": [
+												"localhost"
+											],
+											"port": "7179",
+											"path": [
+												"Users"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "404",
+							"item": [
+								{
+									"name": "POST USERS ERROR",
+									"protocolProfileBehavior": {
+										"disabledSystemHeaders": {
+											"content-type": true
+										}
+									},
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"id\": 4,\r\n    \"name\": \"string\",\r\n    \"lastName\": \"string\",\r\n    \"email\": \"haumel\",\r\n    \"phoneNumber\": 0,\r\n    \"password\": \"string\",\r\n    \"createDate\": \"2023-06-08T19:27:57.621Z\",\r\n    \"updateDate\": \"2023-06-08T19:27:57.621Z\"\r\n}"
+										},
+										"url": {
+											"raw": "https://localhost:7179/Users",
+											"protocol": "https",
+											"host": [
+												"localhost"
+											],
+											"port": "7179",
+											"path": [
+												"Users"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "GET",
+					"item": [
+						{
+							"name": "GET USERS",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "[\r\n    {\r\n        \"id\": 1,\r\n        \"name\": \"Haulmer\",\r\n        \"lastName\": \"Empresa\",\r\n        \"email\": \"erroremail\",\r\n        \"phoneNumber\": 569 987654321,\r\n        \"password\": \"soyunapassword\",\r\n        \"createDate\": \"2023-06-08T19:27:57.621Z\",\r\n        \"updateDate\": \"2023-06-08T19:27:57.621Z\"\r\n    }\r\n]"
+								},
+								"url": {
+									"raw": "https://localhost:7179/Users",
+									"protocol": "https",
+									"host": [
+										"localhost"
+									],
+									"port": "7179",
+									"path": [
+										"Users"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Encrypt/Decrypt",
+			"item": [
+				{
+					"name": "Encrypt",
+					"item": [
+						{
+							"name": "Encrypt Message",
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {
+									"content-type": true
+								}
+							},
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"text\": \"Quiero Encriptarlo\"\r\n}"
+								},
+								"url": {
+									"raw": "https://localhost:7179/Encrypt",
+									"protocol": "https",
+									"host": [
+										"localhost"
+									],
+									"port": "7179",
+									"path": [
+										"Encrypt"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Decrypt",
+					"item": [
+						{
+							"name": "Decrypt Message",
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {
+									"content-type": true
+								}
+							},
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"encrypted\": \"Wu74pah0Yli0yZsNpmY6VpUDhbX/3FkdZtn6ERUwIzg=\"\r\n}"
+								},
+								"url": {
+									"raw": "https://localhost:7179/Decrypt",
+									"protocol": "https",
+									"host": [
+										"localhost"
+									],
+									"port": "7179",
+									"path": [
+										"Decrypt"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	]
+}
